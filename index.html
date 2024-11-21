@@ -1,1 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reward Button</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f9f9f9;
+    }
 
+    .reward-button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .reward-button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <button class="reward-button" id="rewardButton">Get Reward</button>
+
+  <script src="//jagnaimsee.net/vignette.min.js" data-zone="8541723" data-sdk="show_8541723"></script>
+  <script>
+    const rewardButton = document.getElementById('rewardButton');
+
+    rewardButton.addEventListener('click', () => {
+      // Trigger the Monetag vignette ad
+      if (window.vignette) {
+        vignette.showAd();
+      } else {
+        alert('Ad SDK not loaded. Please try again later.');
+      }
+    });
+  </script>
+</body>
+</html>
